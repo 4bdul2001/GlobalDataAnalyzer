@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import UI.TopMenuView?>
+<?import UI.Grid?>
+<?import UI.BottomMenuView?>
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            >
+
+            <top>
+                <TopMenuView fx:id="TopMenu" onCountryOrYearsSelected="#onCountryOrYearsSelected"/>
+            </top>
+
+            <center>
+                <Grid fx:id="grid"/>
+            </center>
+
+            <bottom>
+                <BottomMenuView fx:id="BottomMenu" onChartAdded="#onChartAdded" onChartRemoved="#onChartRemoved" onRecalculateClicked="#onRecalculateClicked"/>
+            </bottom>
+
+</fx:root>

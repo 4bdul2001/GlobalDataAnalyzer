@@ -1,0 +1,35 @@
+import os
+
+# NO NEED TO USE THIS FILE AS THIS SIMPLY GENERATES THE RANDOOP TEST CASES -> Have already been created
+
+def file_line_preAppend(filename, line):
+    file = open(filename, 'r+')
+    content = file.read()
+    file.seek(0, 0)
+    file.write(line.rstrip('\r\n') + '\n' + content)
+
+if __name__ == "__main__":
+    os.system("mvn clean")
+    os.system("mvn compile")
+    os.system("java --class-path $(pwd)/target/classes/:$(pwd)/randoop-lib/randoop-all-4.2.1.jar:$(pwd)/gson-2.9.0.jar:$(pwd)/fastjson-2.0.14.graal.jar randoop.main.Main gentests --classlist=classlist.txt --output-limit=500")
+    os.system("rm *.class")
+
+
+    file_line_preAppend("RegressionTest0.java", "package randoop;")
+    file_line_preAppend("RegressionTest.java", "package randoop;")
+    file_line_preAppend("ErrorTest0.java", "package randoop;")
+    file_line_preAppend("ErrorTest.java", "package randoop;")
+
+
+    os.system("mv RegressionTest0.java src/test/java/randoop")
+    os.system("mv RegressionTest.java src/test/java/randoop")
+    os.system("mv ErrorTest0.java src/test/java/randoop")
+    os.system("mv ErrorTest.java src/test/java/randoop")
+    
+    test_to_run = str(input("Type \"r\" for RegressionTest, \"e\" for ErrorTest OR press any key to abort\n"))
+    if test_to_run=="r":
+        os.system("mvn test -Dtest=randoop.RegressionTest0")
+    elif test_to_run=="e":
+        os.system("mvn test -Dtest=randoop.ErrorTest0")
+    else:
+        print("mvn test not run -> run manually or rerun script\n-use \"python PyScript to rerun\"")

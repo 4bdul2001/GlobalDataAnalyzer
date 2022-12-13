@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import UI.BottomMenuView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="UI.MainPane"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+        <GridPane>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Charts selected:" />
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Analysis selected: "/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Recalculate button pressed: "/>
+
+            <Label fx:id="selectedChartsLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label fx:id="selectedAnalysisLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="recalculatePressesLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        </GridPane>
+    </center>
+    <bottom>
+        <BottomMenuView
+                fx:id="bottomMenu" onChartAdded="#onChartAdded" onChartRemoved="#onChartRemoved" onRecalculateClicked="#onRecalculateClicked" />
+    </bottom>
+</BorderPane>

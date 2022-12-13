@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+
+
+<?import javafx.scene.layout.VBox?>
+<fx:root type="GridPane" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml">
+    <VBox fx:id="topLeft"/>
+    <VBox fx:id="topRight" GridPane.columnIndex="1" />
+    <VBox fx:id="bottomLeft" GridPane.rowIndex="1" />
+    <VBox fx:id="bottomRight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+</fx:root>

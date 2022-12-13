@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.Region?>
+<fx:root type="HBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+      <ToolBar HBox.hgrow="ALWAYS">
+            <Text text="Available Views:" />
+            <ChoiceBox fx:id="availableCharts" prefHeight="25.0" prefWidth="140.0" />
+            <Button fx:id="addChartBtn" prefHeight="25.0" prefWidth="30.0" text="+">
+                  <!-- <onAction>#addChartToListOfViews</onAction> - initialized in controller -->
+            </Button>
+            <Button fx:id="removeChartBtn" prefHeight="25.0" prefWidth="30.0" text="-">
+                  <!-- <onAction>#removeChartToListOfViews</onAction> - initialized in controller -->
+            </Button>
+            <Region HBox.hgrow="SOMETIMES" />
+            <Text text="Choose analysis method:" />
+            <ChoiceBox fx:id="availableAnalyses" prefHeight="25.0" prefWidth="128.0" />
+            <Button fx:id="recalculateBtn" text="Recalculate">
+                  <!-- <onAction>#recalculate</onAction> - initialized in controller -->
+            </Button>
+      </ToolBar>
+</fx:root>
